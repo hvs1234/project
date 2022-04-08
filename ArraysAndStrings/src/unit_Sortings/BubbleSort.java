@@ -1,10 +1,23 @@
-package unit_arraysAndstrings;
-
+package unit_Sortings;
 import java.util.Scanner;
-
-public class InsertionSort {
-
-	static void print(int[] arr, int n)
+public class BubbleSort {
+    static void bubblesort(int[] arr, int n)
+    {
+    	int i,j,temp;
+    	for(i=0;i<n;i++)
+    	{
+    		for(j=0;j<n-i-1;j++)
+    		{
+    			if(arr[j]>arr[j+1])
+    			{
+    				temp = arr[j];
+    				arr[j] = arr[j+1];
+    				arr[j+1] = temp;
+    			}
+    		}
+    	}
+    }
+    static void print(int[] arr, int n)
     {
     	int i;
     	for(i=0;i<n;i++)
@@ -12,21 +25,6 @@ public class InsertionSort {
     		System.out.print(arr[i]+" ");
     	}
     }
-	static void insertionsort(int[] arr, int n)
-	{
-		int key,i,j,temp;
-		for(i=1;i<=n-1;i++)
-		{
-			key = arr[i];
-			j = i-1;
-			while(j>=0 && arr[j]>key)
-			{
-				arr[j+1] = arr[j];
-				j--;
-			}
-			arr[j+1] = key;
-		}
-	}
 	public static void main(String[] args) {
        int n;
        Scanner s = new Scanner(System.in);
@@ -38,7 +36,7 @@ public class InsertionSort {
     	   arr[i] = s.nextInt();
        }
        print(arr,n);
-       insertionsort(arr,n);
+       bubblesort(arr,n);
        System.out.println();
        print(arr,n);
 	}

@@ -1,4 +1,4 @@
-package unit_arraysAndstrings;
+package unit_Sortings;
 
 import java.util.Scanner;
 
