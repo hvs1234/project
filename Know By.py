@@ -22,6 +22,7 @@ def f1():
             root2 = Tk()
             root2.configure(bg="grey")
             root2.geometry('700x500+350+100')
+            root2.resizable(False,False)
             root2.title("Server 1 ...")
 
             def m1():
@@ -29,8 +30,29 @@ def f1():
                 root3.title('Editor ...')
                 root3.configure(bg='white')
                 root3.geometry('700x500+100+50')
-                t1 = Text(root3,bd=6,bg='white',fg='black',width=700,height=400,
-                        font='Fixedsys 10').place(x=0,y=40)
+                def fm1():
+                    root4 = Tk()
+                    root4.title('New File')
+                    root4.geometry('700x500+100+50')
+                    t1 = Text(root4,bd=6,bg='light grey',fg='black',width=116,height=36,
+                        font='Fixedys 12 bold').place(x=0,y=0)
+                    root4.mainloop()
+                t1 = Text(root3,bd=6,bg='light grey',fg='black',width=116,height=34,
+                        font='Fixedys 12 bold').place(x=0,y=0)
+                main_menu = Menu(root3,bg='white')
+                root3.config(menu = main_menu)
+                filemenu = Menu(main_menu,bg='white')
+                main_menu.add_cascade(label='File', menu = filemenu)
+                filemenu.add_command(label='Open File')
+                filemenu.add_command(label='Open New File',command=fm1)
+                filemenu.add_separator()
+                filemenu.add_command(label='Save')
+                filemenu.add_command(label='Save as')
+                sm1 = Menu(filemenu,bg='white')
+                filemenu.add_cascade(label='Command Line',menu=sm1)
+                sm1.add_command(label='(Terminal) >_')
+                sm1.add_separator()
+                sm1.add_command(label='Commands Instructions')
                 root3.mainloop()
 
             b1 = Button(root2,text='Data Access',width=20,bd=4,bg='grey',
@@ -63,6 +85,7 @@ def f1():
             root3 = Tk()
             root3.configure(bg="grey")
             root3.geometry('700x500+350+100')
+            root3.resizable(False,False)
             root3.title("Server 2 ...")
             root3.mainloop()
         def f3():
@@ -70,18 +93,21 @@ def f1():
             root4.configure(bg="grey")
             root4.geometry('700x500+350+100')
             root4.title("Server 3 ...")
+            root4.resizable(False,False)
             root4.mainloop()
         def f4():
             root5 = Tk()
             root5.configure(bg="grey")
             root5.geometry('700x500+350+100')
             root5.title("Server 4 ...")
+            root5.resizable(False,False)
             root5.mainloop()
         def f5():
             root6 = Tk()
             root6.configure(bg="grey")
             root6.geometry('700x500+350+100')
             root6.title("Server 5 ...")
+            root6.resizable(False,False)
             root6.mainloop()
         l1 = Label(root1,text="... This is your entire world creation ...",bg='grey',fg='lime',
                     font="Cambria 18 bold",bd=4).place(x=100,y=50)
