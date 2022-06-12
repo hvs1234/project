@@ -1,6 +1,8 @@
 from curses.textpad import Textbox
 from tkinter import *
 from tkinter import messagebox
+import matplotlib.pyplot as plt
+import numpy as np
 root = Tk()
 root.title('D-A-T-A-B-A-S-E  L-O-G-I-N ...')
 root.configure(bg='orange')
@@ -87,6 +89,50 @@ def f1():
             root3.geometry('700x500+350+100')
             root3.resizable(False,False)
             root3.title("Server 2 ...")
+            
+            def g1():
+                a = [100,200,300,400]
+                b = [15.6,34.899,23.78,44.567]
+                c = [110,250,350,400]
+                d = [25,23.678,40,40]
+                plt.plot(a,b,color='g')
+                plt.plot(c,d,color='r')
+                plt.xlabel('Stock Market Product Values')
+                plt.ylabel('Stock Percentage as per currency for different countries')
+                plt.title('Stock Market Investment Graph')
+                plt.show()
+            def g2():
+                a = ['USA','India','North Korea','Japan','Germany','China']
+                b = [96.42,86.788,91.34,67.2,78.04,81.448]
+                c = [95,45,73,57.98,88.612,99.873]
+                plt.plot(a,b,color='y')
+                plt.plot(a,c,color='g')
+                plt.xlabel('Country')
+                plt.ylabel('Percentage to sold the products in year 2021')
+                plt.title('Graph to show Product Demand in last year 2021 (green-buy the product)'
+                           ' and (yellow-sold the product)')
+                plt.show()
+                
+            l1 = Label(root3,text = 'In this Server, we have to recognize the graph \n'
+                                    'in different formation with four different stacks \n'
+                                    'and it shows best way to find out the information.\n',
+                font='Cambria 15',bg='grey',fg='cyan').place(x=100,y=20)
+            l2 = Label(root3,text='Stock Market',font='Cambria 15',bg='grey',
+                        fg='cyan').place(x=190,y=150)
+            l3 = Label(root3,text='Country Products',font='Cambria 15',bg='grey',
+                        fg='cyan').place(x=190,y=230)
+            l4 = Label(root3,text='Car Sold',font='Cambria 15',bg='grey',
+                        fg='cyan').place(x=190,y=310)
+            l5 = Label(root3,text='Technology',font='Cambria 15',bg='grey',
+                        fg='cyan').place(x=190,y=390)
+            b1 = Button(root3,text='Graph 1',bg='grey',fg='indigo',width=10,
+                        bd=4,font='Cambria 15 bold',command=g1).place(x=400,y=150)
+            b2 = Button(root3,text='Graph 2',bg='grey',fg='indigo',width=10,
+                        bd=4,font='Cambria 15 bold',command=g2).place(x=400,y=230)
+            b3 = Button(root3,text='Graph 3',bg='grey',fg='indigo',width=10,
+                        bd=4,font='Cambria 15 bold').place(x=400,y=310)
+            b4 = Button(root3,text='Graph 4',bg='grey',fg='indigo',width=10,
+                        bd=4,font='Cambria 15 bold').place(x=400,y=390)
             root3.mainloop()
         def f3():
             root4 = Tk()
