@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 root = Tk()
 root.title('D-A-T-A-B-A-S-E  L-O-G-I-N ...')
-root.configure(bg='orange')
 root.resizable(False,False)
 root.geometry('700x500+320+80')
 
@@ -112,7 +111,29 @@ def f1():
                 plt.title('Graph to show Product Demand in last year 2021 (green-buy the product)'
                            ' and (yellow-sold the product)')
                 plt.show()
-                
+            def g3():
+                a = ['Lamborgini','Dodge Challenger','Bugatti','Pagani','Lykan Hypersport']
+                b = ['USA','India']
+                c = [98,67,92,94,85]
+                d = [95.45,86.4]
+                plt.bar(a,c,color='g')
+                plt.bar(b,d,color='y')
+                plt.xlabel('Cars With Two Countries (India And USA)')
+                plt.ylabel('Cars sold')
+                plt.title('Cars Sold (Yellow bar show cars sold in USA and India)\n '
+                          '(Green bar show cars sold in all over the world)')
+                plt.show()
+            def g4():
+                a = ['Android Phones','Iphones','Laptops','Smart Watches','Network Protocols','Mac Book']
+                b = [99.45,95.123,99.12,78,92.458,81]
+                c = [97,84,93,56,48,77]
+                plt.bar(a,b,color='b',width=0.36)
+                plt.plot(a,c,'bd',linestyle='dashdot')
+                plt.xlabel('Technology')
+                plt.ylabel('Products Sold')
+                plt.title('Technology (bar show products sold in all countries)\n'
+                          ' Products sold in India in last year 2021 ')
+                plt.show()
             l1 = Label(root3,text = 'In this Server, we have to recognize the graph \n'
                                     'in different formation with four different stacks \n'
                                     'and it shows best way to find out the information.\n',
@@ -130,9 +151,9 @@ def f1():
             b2 = Button(root3,text='Graph 2',bg='grey',fg='indigo',width=10,
                         bd=4,font='Cambria 15 bold',command=g2).place(x=400,y=230)
             b3 = Button(root3,text='Graph 3',bg='grey',fg='indigo',width=10,
-                        bd=4,font='Cambria 15 bold').place(x=400,y=310)
+                        bd=4,font='Cambria 15 bold',command=g3).place(x=400,y=310)
             b4 = Button(root3,text='Graph 4',bg='grey',fg='indigo',width=10,
-                        bd=4,font='Cambria 15 bold').place(x=400,y=390)
+                        bd=4,font='Cambria 15 bold',command=g4).place(x=400,y=390)
             root3.mainloop()
         def f3():
             root4 = Tk()
@@ -172,23 +193,23 @@ def f1():
         messagebox.showerror("Invalid Login","Invalid Username and Password")
 
 l1 = Label(root,text = "Welcome To Database ... ",font='Cambria 25 bold',
-            fg='black',bg='orange',bd=4).place(x=120,y=50)
+            fg='black',bd=4).place(x=120,y=50)
 l2 = Label(root,text = "Username",font="Cambria 20 bold",
-            fg='black',bg='orange',bd=4).place(x=120,y=160)
+            fg='black',bd=4).place(x=120,y=160)
 l3 = Label(root,text = "Password",font="Cambria 20 bold",
-            fg='black',bg='orange',bd=4).place(x=120,y=250)
-s1 = StringVar()
-s2 = StringVar()
-e1 = Entry(root,textvariable=s1,width=20,bd=4,fg='indigo',bg='light grey',font="Cambria 15 bold")
+            fg='black',bd=4).place(x=120,y=250)
+#s1 = StringVar()
+#s2 = StringVar()
+e1 = Entry(root,width=20,bd=4,fg='indigo',bg='white',font="Cambria 15 bold")
 e1.place(x=300,y=160)
-s1.set('harsh')
-e2 = Entry(root,textvariable=s2,width=20,bd=4,fg='indigo',bg='lightgrey',font="Cambria 15 bold",show="*")
+#s1.set('harsh')
+e2 = Entry(root,width=20,bd=4,fg='indigo',bg='white',font="Cambria 15 bold",show="*")
 e2.place(x=300,y=250)
-s2.set('h1234')
+#s2.set('h1234')
 b1 = Button(root,text="Login",width=8,
-            bd=6,height=2,font="Cambria 15 bold",fg='black',bg='orange',command=f1)
+            bd=6,height=2,font="Cambria 15 bold",fg='black',command=f1)
 b1.place(x=120,y=350)
 b2 = Button(root,text="Cancel",width=8,
-            bd=6,height=2,font="Cambria 15 bold",fg='black',bg='orange',command=root.destroy)
+            bd=6,height=2,font="Cambria 15 bold",fg='black',command=root.destroy)
 b2.place(x=340,y=350)
 root.mainloop()
